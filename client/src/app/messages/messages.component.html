@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <!-- User List -->
+    <div class="col-md-4">
+      <div class="list-group">
+        <button *ngFor="let user of users"
+                class="list-group-item list-group-item-action"
+                [class.active]="user === selectedUser"
+                (click)="openThread(user)">
+          {{ user }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Message Thread -->
+    <div class="col-md-8" *ngIf="selectedUser">
+      <h5>Messages with {{ selectedUser }}</h5>
+      <div class="messages-container">
+        <div *ngFor="let message of messages" class="message mb-3">
+          <div class="message-header d-flex justify-content-between align-items-center">
+            <span class="sender">{{message.senderUsername}}</span>
+            <span class="time">{{message.messageSent | date:'medium'}}</span>
+          </div>
+          <div class="message-content">
+            {{message.content}}
+          </div>
+          <div class="message-actions">
+            <button class="btn btn-danger btn-sm" (click)="deleteMessage(message.id)">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+      <form class="message-form mt-3" (ngSubmit)="sendMessage()">
+        <div class="form-group">
+          <textarea 
+            class="form-control" 
+            rows="3" 
+            [(ngModel)]="messageContent" 
+            name="messageContent"
+            placeholder="Type your message here..."
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="!messageContent">
+          <i class="bi bi-send"></i> Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,67 @@
+.member-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.member-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.member-info {
+  padding: 15px;
+}
+
+.member-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.member-location {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.member-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+}
+
+.btn-like {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-like:hover {
+  background-color: #c82333;
+}
+
+.btn-message {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-message:hover {
+  background-color: #138496;
+} 

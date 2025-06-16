@@ -1,0 +1,40 @@
+<div class="photo-editor">
+  <h3>Your Photos</h3>
+  
+  <div class="upload-section">
+    <input type="file" (change)="addPhoto($event, accountService.currentUserValue?.id)" accept="image/*" class="file-input" [disabled]="isUploading">
+    
+    <div *ngIf="isUploading" class="progress mt-2">
+      <div class="progress-bar" 
+           role="progressbar" 
+           [style.width.%]="uploadProgress"
+           [attr.aria-valuenow]="uploadProgress" 
+           aria-valuemin="0" 
+           aria-valuemax="100">
+        {{uploadProgress}}%
+      </div>
+    </div>
+  </div>
+
+  <div class="photos-grid">
+    <div *ngFor="let photo of photos" class="photo-item">
+      <img [src]="photo.url" alt="User photo">
+      <div class="photo-actions">
+        <button *ngIf="!photo.isMain" 
+                class="btn btn-primary btn-sm" 
+                (click)="setMainPhoto(photo.id)">
+          Set as Main
+        </button>
+        <button class="btn btn-danger btn-sm" 
+                (click)="deletePhoto(photo.id)">
+          Delete
+        </button>
+      </div>
+      <div *ngIf="photo.isMain" class="main-badge">Main Photo</div>
+      <!-- Add this temporarily for debugging -->
+      <div *ngIf="false">
+        Debug URL: {{photo.url}}
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,84 @@
+.messages-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.message {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.message-sender {
+  font-weight: 600;
+  color: #333;
+}
+
+.message-time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.message-content {
+  color: #444;
+  line-height: 1.5;
+}
+
+.message-actions {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.message-form {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.btn-send {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  background-color: #218838;
+} 

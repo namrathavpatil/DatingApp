@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <div class="row" *ngIf="!loading && user">
+    <div class="col-md-4">
+      <div class="card">
+        <img [src]="user.photoUrl" class="card-img-top" alt="{{user.knownAs || user.username}}">
+        <div class="card-body">
+          <h5 class="card-title">{{user.knownAs || user.username}}</h5>
+          <p class="card-text" *ngIf="user.introduction">{{user.introduction}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngIf="user.age">
+            <i class="fas fa-birthday-cake me-2"></i>Age: {{user.age}}
+          </li>
+          <li class="list-group-item" *ngIf="user.gender">
+            <i class="fas fa-venus-mars me-2"></i>Gender: {{user.gender}}
+          </li>
+          <li class="list-group-item" *ngIf="user.city">
+            <i class="fas fa-map-marker-alt me-2"></i>Location: {{user.city}}, {{user.country}}
+          </li>
+          <li class="list-group-item" *ngIf="user.interests">
+            <i class="fas fa-heart me-2"></i>Interests: {{user.interests}}
+          </li>
+          <li class="list-group-item" *ngIf="user.lookingFor">
+            <i class="fas fa-search me-2"></i>Looking for: {{user.lookingFor}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">About {{user.knownAs || user.username}}</h4>
+          <p class="card-text">{{user.introduction || ''}}</p>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-primary me-2"
+                    [disabled]="user.id === (accountService.currentUserValue?.id)"
+                    (click)="likeUser(user)">
+              <i class="fas fa-heart me-2"></i>Like
+            </button>
+            <button class="btn btn-outline-primary"
+                    [disabled]="user.id === (accountService.currentUserValue?.id)"
+                    *ngIf="!showMessageBox"
+                    (click)="showMessageBox = true">
+              <i class="fas fa-comment me-2"></i>Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message Input Box and Send Button -->
+      <div *ngIf="showMessageBox" class="d-flex align-items-center">
+        <input type="text"
+               class="form-control me-2"
+               [(ngModel)]="messageContent"
+               placeholder="Type your message..." />
+        <button class="btn btn-success me-2"
+                (click)="sendMessage(user, messageContent); showMessageBox = false; messageContent = '';">
+          Send
+        </button>
+        <button class="btn btn-secondary"
+                (click)="showMessageBox = false; messageContent = '';">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div> 

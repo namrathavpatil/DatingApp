@@ -1,0 +1,153 @@
+/* Main container styles */
+.container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Card styles */
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 400px;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Form control styles */
+.form-control {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.15);
+}
+
+.form-floating > label {
+  padding: 1rem;
+  color: #6c757d;
+}
+
+/* Button styles */
+.btn-primary {
+  background: #e63950;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #b71c36;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  background: #a8c7eb;
+  cursor: not-allowed;
+}
+
+/* Typography */
+.display-4 {
+  color: #e63950;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(230,57,80,0.08);
+}
+
+.lead {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  color: #4a90e2;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #357abd;
+  text-decoration: none;
+}
+
+/* Form validation */
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Checkbox */
+.form-check-input:checked {
+  background-color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    max-width: 95vw;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.login-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('/assets/milkshake-hearts-bg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  z-index: 2;
+} 

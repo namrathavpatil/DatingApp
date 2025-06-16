@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" *ngIf="model">
+  <div class="mb-3">
+    <label>Introduction</label>
+    <input class="form-control" [(ngModel)]="model.introduction" name="introduction">
+  </div>
+  <div class="mb-3">
+    <label>Looking For</label>
+    <input class="form-control" [(ngModel)]="model.lookingFor" name="lookingFor">
+  </div>
+  <div class="mb-3">
+    <label>Interests</label>
+    <input class="form-control" [(ngModel)]="model.interests" name="interests">
+  </div>
+  <div class="mb-3">
+    <label>City</label>
+    <input class="form-control" [(ngModel)]="model.city" name="city">
+  </div>
+  <div class="mb-3">
+    <label>Country</label>
+    <input class="form-control" [(ngModel)]="model.country" name="country">
+  </div>
+  <button class="btn btn-primary" type="submit">Save</button>
+</form>

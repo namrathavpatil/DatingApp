@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~ngx-toastr/toastr.css';
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('/assets/milkshake-hearts-bg.jpeg') no-repeat center center fixed !important;
+  background-size: cover !important;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, .display-1, .display-4 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #e63950;
+  letter-spacing: 1px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #b71c36;
+}
+
+p, li, label, input, button, a {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+}
+
+a {
+  color: #e63950;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #b71c36;
+  text-decoration: underline;
+}
+
+.card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1, .display-1, .display-4 {
+    font-size: 2rem;
+  }
+  h2, h3, h4, h5, h6 {
+    font-size: 1.2rem;
+  }
+  .card {
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    max-width: 95vw;
+  }
+}
+
+/* Custom styles */
+.message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.message-content {
+  margin-bottom: 0.5rem;
+}
+
+.message-actions {
+  text-align: right;
+} 
